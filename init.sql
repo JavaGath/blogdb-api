@@ -16,7 +16,6 @@ CREATE TABLE IF NOT EXISTS blogs
     blg_title    VARCHAR(50) UNIQUE NOT NULL,
     blg_subtitle VARCHAR(60)        NOT NULL,
     blg_banner   VARCHAR(20)        NOT NULL,
-    blg_author   VARCHAR(30)        NOT NULL,
     blg_date     DATE               NOT NULL,
     blg_usr_id   SERIAL,
     CONSTRAINT fk_users
