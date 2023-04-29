@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS blog_tags
 (
     blt_blg_id   SERIAL,
     blt_tag_name VARCHAR(30),
+    PRIMARY KEY (blt_blg_id, blt_tag_name),
     CONSTRAINT fk_blogs
         FOREIGN KEY (blt_blg_id) REFERENCES blogs (blg_id),
     CONSTRAINT fk_tags
