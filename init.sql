@@ -40,13 +40,13 @@ CREATE TABLE IF NOT EXISTS blog_tags
 
 CREATE TABLE IF NOT EXISTS components
 (
-    cmp_counter INT    NOT NULL,
     cmp_blg_id  SERIAL NOT NULL,
+    cmp_counter INT    NOT NULL,
     cmp_type    VARCHAR(10),
     cmp_header  VARCHAR(50),
     cmp_content TEXT,
 
-    PRIMARY KEY (cmp_counter, cmp_blg_id),
+    PRIMARY KEY (cmp_blg_id, cmp_counter),
     CONSTRAINT fk_blogs
         FOREIGN KEY (cmp_blg_id) REFERENCES blogs (blg_id)
 );
