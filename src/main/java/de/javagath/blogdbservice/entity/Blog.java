@@ -62,7 +62,6 @@ public class Blog {
   @Column(name = "blg_date")
   private Date date;
 
-  @Column(name = "blg_usr_id")
   @ManyToOne
   @JoinColumn(name = "blg_usr_id")
   private User user;

@@ -29,7 +29,6 @@ import lombok.ToString;
 public class Component {
 
   @Id
-  @Column(name = "cmp_blg_id")
   @ManyToOne
   @JoinColumn(name = "cmp_blg_id")
   private Blog blog;
