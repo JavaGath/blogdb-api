@@ -21,3 +21,5 @@ After that you can start to create your containers. It is important to use host-
 docker build . -f blog-db.Dockerfile -t blog-db 
 docker run --name blog-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d blog-db 
 ```
+
+In the script dummy-data.sql you can find dummy data to work with new empty docker container. 

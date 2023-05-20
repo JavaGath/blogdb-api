@@ -3,6 +3,7 @@ package de.javagath.blogdbservice.entity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,9 +11,11 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.sql.Date;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -34,18 +37,10 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class Blog {
 
-  @ManyToMany(cascade = {CascadeType.ALL})
-  @JoinTable(
-      name = "blog_tags",
-      joinColumns = {@JoinColumn(name = "blt_blg_id")},
-      inverseJoinColumns = {@JoinColumn(name = "blt_tag_name")}
-  )
-  Set<Tag> tags = new HashSet<>();
-
   @Id
   @Column(name = "blg_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+  private Long id;
 
   @Column(name = "blg_address")
   private String address;
@@ -62,8 +57,19 @@ public class Blog {
   @Column(name = "blg_date")
   private Date date;
 
+  @ManyToMany
+  @JoinTable(
+      name = "blog_tags",
+      joinColumns = @JoinColumn(name = "blt_blg_id"),
+      inverseJoinColumns = @JoinColumn(name = "blt_tag_id")
+  )
+  private List<Tag> tags = new ArrayList<>();
+
   @ManyToOne
   @JoinColumn(name = "blg_usr_id")
   private User user;
+
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "blog", cascade = CascadeType.ALL, orphanRemoval = true)
+  private Set<Component> components;
 
 }

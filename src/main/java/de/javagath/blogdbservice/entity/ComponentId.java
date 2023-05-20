@@ -18,8 +18,8 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class ComponentId implements Serializable {
 
-  private final Integer blog;
-  private final Integer counter;
+  private Long blog;
+  private Integer counter;
 
   /**
    * Default constructor.
@@ -27,9 +27,18 @@ public class ComponentId implements Serializable {
    * @param blog    PK from Blog.java and PK/FK from Component.java
    * @param counter PK from Component.java
    */
-  public ComponentId(Integer blog, Integer counter) {
+  @SuppressWarnings("unused")
+  public ComponentId(Long blog, Integer counter) {
     this.blog = blog;
     this.counter = counter;
+  }
+
+  /**
+   * Standard constructor which is needed to create Components-Entity.
+   */
+  @SuppressWarnings("unused")
+  public ComponentId() {
+
   }
 
 }

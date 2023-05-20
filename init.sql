@@ -24,18 +24,19 @@ CREATE TABLE IF NOT EXISTS blogs
 
 CREATE TABLE IF NOT EXISTS tags
 (
-    tag_name VARCHAR(30) PRIMARY KEY
+    tag_id   SERIAL PRIMARY KEY,
+    tag_name VARCHAR(30)
 );
 
 CREATE TABLE IF NOT EXISTS blog_tags
 (
-    blt_blg_id   SERIAL,
-    blt_tag_name VARCHAR(30),
-    PRIMARY KEY (blt_blg_id, blt_tag_name),
+    blt_blg_id SERIAL,
+    blt_tag_id SERIAL,
+    PRIMARY KEY (blt_blg_id, blt_tag_id),
     CONSTRAINT fk_blogs
         FOREIGN KEY (blt_blg_id) REFERENCES blogs (blg_id),
     CONSTRAINT fk_tags
-        FOREIGN KEY (blt_tag_name) REFERENCES tags (tag_name)
+        FOREIGN KEY (blt_tag_id) REFERENCES tags (tag_id)
 );
 
 CREATE TABLE IF NOT EXISTS components

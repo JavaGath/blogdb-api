@@ -18,12 +18,12 @@ VALUES ('how-to-write-my-first-blog', 'How to write my first blog?',
 SELECT *
 FROM blogs;
 
-INSERT INTO blog_tags (blt_blg_id, blt_tag_name)
-VALUES (1, 'blog');
-INSERT INTO blog_tags (blt_blg_id, blt_tag_name)
-VALUES (1, 'web');
-INSERT INTO blog_tags (blt_blg_id, blt_tag_name)
-VALUES (1, 'development');
+INSERT INTO blog_tags (blt_blg_id, blt_tag_id)
+VALUES (1, 1);
+INSERT INTO blog_tags (blt_blg_id, blt_tag_id)
+VALUES (1, 2);
+INSERT INTO blog_tags (blt_blg_id, blt_tag_id)
+VALUES (1, 3);
 SELECT *
 FROM blog_tags;
 
