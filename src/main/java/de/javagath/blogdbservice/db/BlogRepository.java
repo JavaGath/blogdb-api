@@ -1,6 +1,5 @@
 package de.javagath.blogdbservice.db;
 
-import de.javagath.blogdbservice.entity.Blog;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +13,13 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface BlogRepository extends CrudRepository<Blog, Long> {
+
+  /**
+   * Looks for the Blog-Entity using its address.
+   *
+   * @param address value in blg_address column
+   * @return Blog-Entity or null
+   */
+  Blog searchBlogByAddress(String address);
 
 }

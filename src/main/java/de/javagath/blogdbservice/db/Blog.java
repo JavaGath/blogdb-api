@@ -1,4 +1,4 @@
-package de.javagath.blogdbservice.entity;
+package de.javagath.blogdbservice.db;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -14,7 +14,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import lombok.EqualsAndHashCode;
@@ -63,7 +62,7 @@ public class Blog {
       joinColumns = @JoinColumn(name = "blt_blg_id"),
       inverseJoinColumns = @JoinColumn(name = "blt_tag_id")
   )
-  private List<Tag> tags = new ArrayList<>();
+  private List<Tag> tags;
 
   @ManyToOne
   @JoinColumn(name = "blg_usr_id")

@@ -1,4 +1,4 @@
-package de.javagath.blogdbservice.entity;
+package de.javagath.blogdbservice.db;
 
 import java.io.Serializable;
 import lombok.EqualsAndHashCode;

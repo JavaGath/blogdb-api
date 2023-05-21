@@ -1,11 +1,15 @@
 package de.javagath.blogdbservice.web;
 
-import de.javagath.blogdbservice.db.BlogRepository;
+import de.javagath.blogdbservice.dto.BlogDto;
+import de.javagath.blogdbservice.dto.BlogRequestDto;
+import de.javagath.blogdbservice.service.BlogService;
 import java.lang.invoke.MethodHandles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -21,13 +25,26 @@ public class BlogDbController {
 
   private static final Logger LOG =
       LoggerFactory.getLogger(MethodHandles.lookup().lookupClass().getSimpleName());
+  private final BlogService blogService;
 
-  @Autowired
-  BlogRepository blogRepository;
+  /**
+   * Constructor to autowire dependencies.
+   *
+   * @param blogService dependency of the bean BlogService
+   */
+  public BlogDbController(BlogService blogService) {
+    this.blogService = blogService;
+  }
 
-  @GetMapping(value = "/")
-  public Object dummyMethod() {
-    LOG.info("My find all");
-    return blogRepository.findAll();
+  /**
+   * Main endpoint to manage Crud operations
+   *
+   * @param request BlogRequestDto
+   * @return Blog Entity, returns empty BlogDto if blog was deleted
+   */
+  @PostMapping(value = "/blog", consumes = MediaType.APPLICATION_JSON_VALUE)
+  public @ResponseBody BlogDto manageBlogRequest(@RequestBody BlogRequestDto request) {
+    LOG.debug("My address: " + request.getAddress());
+    return blogService.manageBlogRequest(request);
   }
 }
