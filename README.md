@@ -20,6 +20,19 @@ After that you can start to create your containers. It is important to use host-
 ```
 docker build . -f blog-db.Dockerfile -t blog-db 
 docker run --name blog-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d blog-db 
+docker build --network="host" . -f blogdb-service.Dockerfile -t blogdb-service --no-cache --progress=plain
+```
+
+### In Docker-network
+
+You need to create a network for DNS container-names
+
+```
+docker network create javagath
+docker run --net javagath --name blog-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d blog-db
+docker run --net javagath  --name blogdb-service -p 8081:8081 -d blogdb-service
+docker network inspect javagath
+localhost:8081/actuator/health
 ```
 
 In the script dummy-data.sql you can find dummy data to work with new empty docker container. 
