@@ -1,4 +1,4 @@
-package de.javagath.blogdbservice.dto;
+package de.javagath.blogdbapi.dto;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

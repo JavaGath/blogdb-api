@@ -1,10 +1,10 @@
-package de.javagath.blogdbservice;
+package de.javagath.blogdbapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BlogdbServiceApplicationTests {
+class BlogdbApiApplicationTests {
 
 	@Test
 	void contextLoads() {

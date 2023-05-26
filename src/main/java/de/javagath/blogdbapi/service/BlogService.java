@@ -1,9 +1,9 @@
-package de.javagath.blogdbservice.service;
+package de.javagath.blogdbapi.service;
 
-import de.javagath.blogdbservice.db.Blog;
-import de.javagath.blogdbservice.db.BlogRepository;
-import de.javagath.blogdbservice.dto.BlogDto;
-import de.javagath.blogdbservice.dto.BlogRequestDto;
+import de.javagath.blogdbapi.db.Blog;
+import de.javagath.blogdbapi.db.BlogRepository;
+import de.javagath.blogdbapi.dto.BlogDto;
+import de.javagath.blogdbapi.dto.BlogRequestDto;
 import org.springframework.stereotype.Service;
 
 /**

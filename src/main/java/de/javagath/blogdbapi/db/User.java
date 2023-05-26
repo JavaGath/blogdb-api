@@ -1,4 +1,4 @@
-package de.javagath.blogdbservice.db;
+package de.javagath.blogdbapi.db;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
@@ -6,40 +6,51 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Entity class for the table tags.
+ * Entity class for the table user.
  *
  * @author Ievgenii Izrailtenko
  * @version 1.0
  * @since 1.0
  */
 @Entity
-@Table(name = "tags")
+@Table(name = "users")
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
-public class Tag {
+public class User {
 
   @Id
-  @Column(name = "tag_id")
+  @Column(name = "usr_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Integer id;
 
-  @Column(name = "tag_name")
+  @Column(name = "usr_username")
+  private String username;
+
+  @Column(name = "usr_email")
+  private String email;
+
+  @Column(name = "usr_name")
   private String name;
 
-  @ManyToMany(mappedBy = "tags")
+  @Column(name = "usr_surname")
+  private String surname;
+
+  @Column(name = "usr_avatar")
+  private String avatar;
+
+  @OneToMany(mappedBy = "user")
   @JsonIgnore
-  private List<Blog> blogs = new ArrayList<>();
+  private Set<Blog> blogs;
 
 }

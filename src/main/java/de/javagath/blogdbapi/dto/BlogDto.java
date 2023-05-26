@@ -1,8 +1,8 @@
-package de.javagath.blogdbservice.dto;
+package de.javagath.blogdbapi.dto;
 
-import de.javagath.blogdbservice.db.Component;
-import de.javagath.blogdbservice.db.Tag;
-import de.javagath.blogdbservice.db.User;
+import de.javagath.blogdbapi.db.Component;
+import de.javagath.blogdbapi.db.Tag;
+import de.javagath.blogdbapi.db.User;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashSet;
