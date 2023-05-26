@@ -1,4 +1,4 @@
-package de.javagath.blogdbservice.db;
+package de.javagath.blogdbapi.db;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

@@ -1,4 +1,4 @@
-package de.javagath.blogdbservice.db;
+package de.javagath.blogdbapi.db;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;

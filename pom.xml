@@ -2,9 +2,9 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <artifactId>blogdb-service</artifactId>
+  <artifactId>blogdb-api</artifactId>
   <build>
-    <finalName>blogdb-service</finalName>
+    <finalName>blogdb-api</finalName>
     <plugins>
       <plugin>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -55,7 +55,7 @@
   <description>Demo project for Spring Boot</description>
   <groupId>de.javagath</groupId>
   <modelVersion>4.0.0</modelVersion>
-  <name>blogdb-service</name>
+  <name>blogdb-api</name>
   <parent>
     <artifactId>spring-boot-starter-parent</artifactId>
     <groupId>org.springframework.boot</groupId>

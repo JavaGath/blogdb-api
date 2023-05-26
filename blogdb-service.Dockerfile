@@ -1,8 +1,8 @@
 FROM maven:3.9
 
 # Create app-directory and copy the project
-ADD . /blogdb-service
-WORKDIR /blogdb-service
+ADD . /blogdb-api
+WORKDIR /blogdb-api
 
 # Is everything ok?
 RUN ls
@@ -19,7 +19,7 @@ LABEL maintainer="Ievgenii Izrailtenko"
 VOLUME /tmp
 
 # Add jar to container
-COPY --from=0 "/blogdb-service/target/blogdb-service.jar" blogdb-service.jar
+COPY --from=0 "/blogdb-api/target/blogdb-api.jar" blogdb-api.jar
 
 # Run jar-artifact
-CMD ["java","-jar","/blogdb-service.jar"]
+CMD ["java","-jar","/blogdb-api.jar"]

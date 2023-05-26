@@ -1,8 +1,8 @@
-package de.javagath.blogdbservice.web;
+package de.javagath.blogdbapi.web;
 
-import de.javagath.blogdbservice.dto.BlogDto;
-import de.javagath.blogdbservice.dto.BlogRequestDto;
-import de.javagath.blogdbservice.service.BlogService;
+import de.javagath.blogdbapi.dto.BlogDto;
+import de.javagath.blogdbapi.dto.BlogRequestDto;
+import de.javagath.blogdbapi.service.BlogService;
 import java.lang.invoke.MethodHandles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
