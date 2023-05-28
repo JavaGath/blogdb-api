@@ -1,14 +1,14 @@
 package de.javagath.blogdbapi.service;
 
+import de.javagath.blog.dto.BlogDto;
+import de.javagath.blog.dto.BlogRequestDto;
+import de.javagath.blog.dto.ComponentDto;
+import de.javagath.blog.dto.CrudOperation;
+import de.javagath.blog.dto.TagDto;
+import de.javagath.blog.dto.UserDto;
 import de.javagath.blogdbapi.db.Blog;
 import de.javagath.blogdbapi.db.BlogRepository;
 import de.javagath.blogdbapi.db.User;
-import de.javagath.blogdbapi.dto.BlogDto;
-import de.javagath.blogdbapi.dto.BlogRequestDto;
-import de.javagath.blogdbapi.dto.ComponentDto;
-import de.javagath.blogdbapi.dto.CrudOperation;
-import de.javagath.blogdbapi.dto.TagDto;
-import de.javagath.blogdbapi.dto.UserDto;
 import java.util.Objects;
 import org.springframework.stereotype.Service;
 

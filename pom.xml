@@ -29,7 +29,6 @@
       <artifactId>spring-boot-starter-web</artifactId>
       <groupId>org.springframework.boot</groupId>
     </dependency>
-
     <dependency>
       <artifactId>spring-boot-devtools</artifactId>
       <groupId>org.springframework.boot</groupId>
@@ -51,8 +50,14 @@
       <groupId>org.postgresql</groupId>
       <scope>runtime</scope>
     </dependency>
+    <!--My own library-->
+    <dependency>
+      <artifactId>shared-contract</artifactId>
+      <groupId>de.javagath</groupId>
+      <version>1.0.0</version>
+    </dependency>
   </dependencies>
-  <description>Demo project for Spring Boot</description>
+  <description>Api for connection to blog database</description>
   <groupId>de.javagath</groupId>
   <modelVersion>4.0.0</modelVersion>
   <name>blogdb-api</name>
