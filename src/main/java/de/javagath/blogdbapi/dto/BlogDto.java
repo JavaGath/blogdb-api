@@ -1,12 +1,7 @@
 package de.javagath.blogdbapi.dto;
 
-import de.javagath.blogdbapi.db.Component;
-import de.javagath.blogdbapi.db.Tag;
-import de.javagath.blogdbapi.db.User;
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -32,8 +27,8 @@ public class BlogDto {
   private String subtitle;
   private String banner;
   private Date date;
-  private List<Tag> tags = new ArrayList<>();
-  private User user;
-  private Set<Component> components = new HashSet<>();
+  private Set<TagDto> tags = new HashSet<>();
+  private UserDto user;
+  private Set<ComponentDto> components = new HashSet<>();
 
 }
