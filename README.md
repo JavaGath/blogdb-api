@@ -16,11 +16,12 @@ sudo vim /etc/hosts
 After that you can start to create your containers. It is important to use host-network.
 <br> While building the process is not in the docker-network because it is not a docker container.
 <br> With host-network Dockerfile will use while building host-names from your machine.
+<br> Bash-Script copies private library from local .m2 into target dire, to use it later in docker.
 
 ```
 docker build . -f blog-db.Dockerfile -t blog-db 
 docker run --name blog-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d blog-db 
-docker build --network="host" . -f blogdb-api.Dockerfile -t blogdb-api --no-cache --progress=plain
+build-dockerfile-blogdb-api.bash
 ```
 
 ### In Docker-network

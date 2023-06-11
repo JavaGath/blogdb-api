@@ -1,14 +1,17 @@
 FROM maven:3.9
-
 # Create app-directory and copy the project
 ADD . /blogdb-api
+# Copy private libary from target dir into docker .m2
+RUN mkdir -p /root/.m2/repository/de/javagath
+RUN cp -R blogdb-api/target/shared-contract/ /root/.m2/repository/de/javagath/shared-contract/
 WORKDIR /blogdb-api
 
 # Is everything ok?
-RUN ls
+RUN echo "Show me the content"
+RUN ls -a
 
 # Run Maven build
-RUN mvn clean install
+RUN mvn install
 
 RUN echo "jar is ready"
 # Remove the build container and just use the build artifact
