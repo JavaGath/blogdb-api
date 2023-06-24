@@ -60,6 +60,8 @@ public class BlogService {
     result.setSubtitle(entity.getSubtitle());
     result.setTitle(entity.getTitle());
     result.setUser(convertUserToDto(entity.getUser()));
+    result.sortTagsById();
+    result.sortComponentByCounter();
     return result;
   }
 
